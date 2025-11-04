@@ -18,8 +18,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    private enum Role{
-        visitor, Admin, waiter
+    enum Role{
+        visitor, Admin, worker
     }
 
     public User(Long chatid, String username){
