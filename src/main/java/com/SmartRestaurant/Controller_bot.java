@@ -114,8 +114,6 @@ public class Controller_bot implements LongPollingSingleThreadUpdateConsumer {
                 }
 
 
-
-
                 if (update.hasCallbackQuery() && userstates.get(update.getCallbackQuery().getFrom().getId()) == userstate.chooseMenuEat) {     // тут уже принимается реакция на сообщение с меню еды
                     service.addFood(Integer.parseInt(update.getCallbackQuery().getData()), update.getCallbackQuery().getFrom().getId());
                     messageConstructor.SuccessfulAdded(update.getCallbackQuery().getFrom().getId(), client);
@@ -141,7 +139,7 @@ public class Controller_bot implements LongPollingSingleThreadUpdateConsumer {
                     userstates.put(update.getCallbackQuery().getFrom().getId(), userstate.chooseMenuEat);
                 }
 
-                if (update.hasCallbackQuery() && userstates.get(update.getCallbackQuery().getFrom().getId()) == userstate.chooseMenuDrinks ) {// тут уже принимается реакция на сообщение с меню напитков
+                if (update.hasCallbackQuery() && userstates.get(update.getCallbackQuery().getFrom().getId()) == userstate.chooseMenuDrinks){// тут уже принимается реакция на сообщение с меню напитков
                     if(!update.getCallbackQuery().getData().equals("skipEat")){
                         service.addDrink(Integer.parseInt(update.getCallbackQuery().getData()), update.getCallbackQuery().getFrom().getId());
                         messageConstructor.SuccessfulAdded(update.getCallbackQuery().getFrom().getId(), client);
